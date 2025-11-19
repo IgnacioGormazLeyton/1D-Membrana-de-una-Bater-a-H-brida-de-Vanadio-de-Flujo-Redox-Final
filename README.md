@@ -79,7 +79,7 @@ $$
 \frac{dc_{i}}{dt} \cdot \Delta x = N_{i, entra} - N_{i, sale}
 $$
 
-Los flujos en las caras de los volúmenes finitos se calculan utilizando promedios aritméticos para las concentraciones y diferencias finitas centrales para los gradientes entre nodos adyacentes:
+Los flujos en las caras de los volúmenes finitos se calculan utilizando promedios aritméticos para las concentraciones y diferencias finitas, de forma que se tiene la siguiente ecuación que es la que se termina implementando en el código:
 
 $$
 N_{i, cara} \approx -D_{eff} \frac{c_{i+1} - c_{i}}{\Delta x} - \frac{D_{eff} z_i F}{RT} \left( \frac{c_{i+1} + c_{i}}{2} \right) \frac{\phi_{i+1} - \phi_{i}}{\Delta x}
