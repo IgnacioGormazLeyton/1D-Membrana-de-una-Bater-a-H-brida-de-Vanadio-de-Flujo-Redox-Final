@@ -19,6 +19,21 @@ Este repositorio contiene la implementación numérica de un modelo unidimension
 
 La batería de flujo redox de vanadio (VRFB) es una tecnología emergente de almacenamiento de energía. Se utiliza principalmente para aplicaciones a gran escala, como el almacenamiento de energía renovable en picos de producción y su posterior liberación en momentos de baja producción (Un ejemplo puede ser momentos del día sin luz solar o viento). En estos sistemas, los electrolitos líquidos que contienen las especies activas se almacenan en tanques externos y se bombean a través de una pila de celdas electroquímicas donde ocurren las reacciones de reducción-oxidación (redox).Esto permite que su capacidad sea modificable de forma desacoplada ya sea colocando variables en serie para aumentar la potencia o colocando tanques externos de mayor tamaño para mejorar el almacenamiento, una ventaja si las comparamos con otras tecnologías con focos similares en el mercado como pueden ser las baterías ion de Litio.
 
+### Principio de Funcionamiento
+En una VRFB, la energía se almacena en dos electrolitos líquidos que contienen iones de vanadio en diferentes estados de oxidación ($VO^{2+}/VO_2^+$ en el catolito). Estos líquidos son bombeados desde tanques externos,(esto es el desacople que se mencionó anteriormente y es una ventaja frente a otro tipo de baterías) hacia una celda donde ocurre la reacción electroquímica.
+
+Este proyecto modela específicamente el comportamiento de transporte a través de la membrana de intercambio iónico, un componente crítico que debe permitir el paso de protones ($H^+$) para cerrar el circuito eléctrico.
+
+---
+
+## Aplicación en Chile (IPCh)
+
+La implementación de Baterías de Flujo Redox Híbridas (RHVFC) en Chile responde a la urgente necesidad de gestionar la alta penetración de energías renovables variables, como la solar y la eólica, que se proyecta superará el 30% de la generación global para 2040. Chile posee recursos excepcionales en el Desierto de Atacama y la Patagonia, pero la naturaleza intermitente de estas fuentes genera inestabilidad en la red si no se cuenta con sistemas de respaldo adecuados. En este escenario, la tecnología RHVFC se presenta como una solución superior a las baterías convencionales de litio para aplicaciones de red, debido a su capacidad única de desacoplar la energía almacenada de la potencia entregada, permitiendo escalar el tiempo de descarga simplemente aumentando el volumen de los tanques de electrolito y no el tamaño del reactor.
+
+Esta tecnología puede ser la respuesta a los niveles récord de "vertimiento" de energía renovable reportados por el Coordinador Eléctrico Nacional, donde miles de GWh de energía limpia se pierden anualmente por falta de infraestructura para guardarla durante las horas peak de producción (El momento del día con más solo o viento por ejemplo). La batería de flujo modelada en este trabajo ataca directamente este problema mediante aplicaciones de gestión de energía y liberación en periodos de necesidad, las cuales requieren ciclos de carga y descarga profundos y de larga duración (horas a días) que las tecnologías convencionales no pueden ofrecer de manera costo-efectiva.
+
+---
+
 ## Modelo Matemático
 
 El modelo se basa en un sistema de ecuaciones diferenciales parciales (PDEs) acopladas que describen el transporte de iones(en específico protones, V4 Y V5).
@@ -133,7 +148,9 @@ El código está escrito en **Python** y utiliza las siguientes librerías:
 
 1.  **K. W. Knehr et al.** "A transient vanadium flow battery model incorporating vanadium crossover and water transport through the membrane". *Journal of The Electrochemical Society*, 159(9):A1446-A1459, 2012. 
 2.  **Catalina A. Pino Muñoz**. "Mathematical Modelling of Vanadium-Based Redox Flow Batteries". PhD thesis, Imperial College London, September 2019. 
-
-
+3. **Chen et al.** "Progress in electrical energy storage system: A critical review". *Progress in Natural Science*, 19(3):291-312, 2009.
+4.  **Alotto et al.** "Redox flow batteries for the storage of renewable energy: A review". *Renewable and Sustainable Energy Reviews*, 29:325-335, 2014. 
+5. **Ministerio de Energía, Gobierno de Chile.** (2022). *Ley de Almacenamiento y Electromovilidad (Ley N° 21.505)*. Biblioteca del Congreso Nacional de Chile.
+6. **Coordinador Eléctrico Nacional.** (2024). *Estudio de Vertimiento de Energías Renovables en el Sistema Eléctrico Nacional*.
 
 
