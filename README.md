@@ -17,11 +17,11 @@ Este repositorio contiene la implementación numérica de un modelo unidimension
 
 ## Introducción
 
-La batería de flujo redox de vanadio (VRFB) es una tecnología emergente para el almacenamiento de energía a gran escala, ideal para gestionar la intermitencia de energías renovables. En estos sistemas, electrolitos líquidos son bombeados a través de una celda electroquímica. Este proyecto modela específicamente el comportamiento de los iones (principalmente protones $H^+$) a través de la membrana de intercambio iónico, un componente crítico para la eficiencia del sistema.
+La batería de flujo redox de vanadio (VRFB) es una tecnología emergente de almacenamiento de energía. Se utiliza principalmente para aplicaciones a gran escala, como el almacenamiento de energía renovable en picos de producción y su posterior liberación en momentos de baja producción (Un ejemplo puede ser momentos del día sin luz solar o viento). En estos sistemas, los electrolitos líquidos que contienen las especies activas se almacenan en tanques externos y se bombean a través de una pila de celdas electroquímicas donde ocurren las reacciones de reducción-oxidación (redox).Esto permite que su capacidad sea modificable de forma desacoplada ya sea colocando variables en serie para aumentar la potencia o colocando tanques externos de mayor tamaño para mejorar el almacenamiento, una ventaja si las comparamos con otras tecnologías con focos similares en el mercado como pueden ser las baterías ion de Litio.
 
 ## Modelo Matemático
 
-El modelo se basa en un sistema de ecuaciones diferenciales parciales (PDEs) acopladas que describen el transporte de iones.
+El modelo se basa en un sistema de ecuaciones diferenciales parciales (PDEs) acopladas que describen el transporte de iones(en específico protones,V4 Y V5.
 
 ### Conservación de Masa
 Para las especies iónicas móviles (como $VO^{2+}$, $VO_{2}^{+}$, y $H^{+}$), la conservación de masa en el dominio de la membrana se describe como:
@@ -34,7 +34,7 @@ Donde:
 - $c_{i}^{m}$: Concentración de la especie $i$ en la membrana.
 - $\vec{N}_{i}^{m}$: Flujo molar de la especie.
 
-Para especies aniónicas como el bisulfato ($HSO_{4}^{-}$), se asume la **condición de electroneutralidad**:
+Para especies aniónicas como el bisulfato ($HSO_{4}^{-}$), se asume la condición de electroneutralidad:
 
 $$
 z_{f}c_{f} + \sum_{i}z_{i}c_{i}^{m} = 0
@@ -85,7 +85,7 @@ $$
 N_{i, cara} \approx -D_{eff} \frac{c_{i+1} - c_{i}}{\Delta x} - \frac{D_{eff} z_i F}{RT} \left( \frac{c_{i+1} + c_{i}}{2} \right) \frac{\phi_{i+1} - \phi_{i}}{\Delta x}
 $$
 
-El sistema resultante es un sistema de **Ecuaciones Diferenciales Algebraicas (DAE)**, donde las concentraciones se resuelven diferencialmente y el potencial $\phi$ se resuelve algebraicamente para satisfacer la conservación de corriente.
+El sistema resultante es un sistema de Ecuaciones Diferenciales Algebraicas (DAE), donde las concentraciones se resuelven diferencialmente y el potencial $\phi$ se resuelve algebraicamente para satisfacer la conservación de corriente.
 
 ---
 
@@ -115,7 +115,14 @@ El código está escrito en **Python** y utiliza las siguientes librerías:
 - `scipy_dae`: Para la integración temporal del sistema DAE.
 - `matplotlib`: Para la visualización de resultados.
 
+## Referencias
+
+1.  **K. W. Knehr et al.** "A transient vanadium flow battery model incorporating vanadium crossover and water transport through the membrane". *Journal of The Electrochemical Society*, 159(9):A1446-A1459, 2012. 
+2.  **Catalina A. Pino Muñoz**. "Mathematical Modelling of Vanadium-Based Redox Flow Batteries". PhD thesis, Imperial College London, September 2019. 
+
 ### Ejecución
 Instalar dependencias:
 ```bash
 pip install -r requirements.txt
+
+
