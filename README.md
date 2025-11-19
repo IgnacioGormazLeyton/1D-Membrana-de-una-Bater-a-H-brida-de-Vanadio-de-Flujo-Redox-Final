@@ -21,7 +21,7 @@ La batería de flujo redox de vanadio (VRFB) es una tecnología emergente de alm
 
 ## Modelo Matemático
 
-El modelo se basa en un sistema de ecuaciones diferenciales parciales (PDEs) acopladas que describen el transporte de iones(en específico protones,V4 Y V5.
+El modelo se basa en un sistema de ecuaciones diferenciales parciales (PDEs) acopladas que describen el transporte de iones(en específico protones, V4 Y V5).
 
 ### Conservación de Masa
 Para las especies iónicas móviles (como $VO^{2+}$, $VO_{2}^{+}$, y $H^{+}$), la conservación de masa en el dominio de la membrana se describe como:
