@@ -34,7 +34,7 @@ Donde:
 - $c_{i}^{m}$: Concentración de la especie $i$ en la membrana.
 - $\vec{N}_{i}^{m}$: Flujo molar de la especie.
 
-Para especies aniónicas como el bisulfato ($HSO_{4}^{-}$), se asume la condición de electroneutralidad:
+Para el bisulfato ($HSO_{4}^{-}$), se asume la condición de electroneutralidad:
 
 $$
 z_{f}c_{f} + \sum_{i}z_{i}c_{i}^{m} = 0
@@ -71,7 +71,7 @@ $$
 
 ## Discretización y Método Numérico
 
-Para resolver el sistema acoplado, se utiliza el **Método de Volúmenes Finitos (FVM)** en un dominio 1D discretizado en $N$ nodos.
+Para resolver el sistema acoplado, se utiliza el Método de Volúmenes Finitos (FVM) en un dominio 1D discretizado en $N$ nodos (sujeto a modificación si se requiere).
 
 La ecuación de conservación discretizada para un volumen de control toma la forma:
 
@@ -85,7 +85,7 @@ $$
 N_{i, cara} \approx -D_{eff} \frac{c_{i+1} - c_{i}}{\Delta x} - \frac{D_{eff} z_i F}{RT} \left( \frac{c_{i+1} + c_{i}}{2} \right) \frac{\phi_{i+1} - \phi_{i}}{\Delta x}
 $$
 
-El sistema resultante es un sistema de Ecuaciones Diferenciales Algebraicas (DAE), donde las concentraciones se resuelven diferencialmente y el potencial $\phi$ se resuelve algebraicamente para satisfacer la conservación de corriente.
+El sistema resultante es un sistema de Ecuaciones Diferenciales Algebraicas (DAE), donde las concentraciones se resuelven diferencialmente y el potencial $\phi$ se resuelve algebraicamente para satisfacer la conservación de corriente mediante la herramienta solver_dae ejecutable en python.
 
 ---
 
