@@ -94,7 +94,7 @@ El sistema resultante es un sistema de Ecuaciones Diferenciales Algebraicas (DAE
 El dominio computacional se define entre $x=0$ (interfaz Cátodo/Membrana) y $x=L$ (interfaz Membrana/Ánodo).
 
 ### 1. Interfaz Izquierda ($x=0$)
-En la interfaz con el electrolito (tanque), las concentraciones en la superficie de la membrana no son iguales a las del tanque ($bulk$). [cite_start]Se calculan considerando el Salto de Potencial de Donnan ($\Delta \phi_D$), lo que genera una discontinuidad en la concentración [cite: 1296-1297, 1465-1467]:
+En la interfaz con el electrolito (tanque), las concentraciones en la superficie de la membrana no son iguales a las del tanque.Se calculan considerando el Salto de Potencial, lo que genera una discontinuidad en la concentración y por lo tanto modifican las condiciones de concentración iniciales:
 
 $$
 c_{i}(x=0) = c_{i}^{bulk} \cdot \exp\left(\frac{-z_i F \Delta \phi_{Donnan}}{RT}\right)
@@ -106,14 +106,16 @@ Donde $i$ representa las especies $H^+$, $VO^{2+}$ y $VO_{2}^{+}$.
 En la salida hacia el ánodo, se aplican condiciones diferentes según la especie:
 
 * Protones ($H^+$): Se impone un flujo proporcional a la densidad de corriente aplicada ($j_{appl}$), asumiendo que son los principales portadores de carga.
+  
     $$-\vec{n} \cdot \vec{N}_{H^+} = \frac{j_{appl}}{F}$$
 
 * Especies de Vanadio ($VO^{2+}, VO_{2}^{+}$): Se asume una condición de Flujo Nulo (Neumann), implicando que no hay *crossover* de vanadio hacia el ánodo en esta simplificación del modelo.
+  
     $$-\vec{n} \cdot \vec{N}_{V} = 0$$
 
 ### 3. Potencial Iónico ($\phi_e$)
 * En $x=0$: Se fija un potencial de referencia (Dirichlet), $\phi_{e} = 0$.
-* [cite_start]En $x=L$: Se establece que la corriente iónica total debe igualar a la corriente aplicada (Neumann) [cite: 57-58].
+* En $x=L$: Se establece que la corriente iónica total debe igualar a la corriente aplicada (Neumann) .
 
 ---
 
