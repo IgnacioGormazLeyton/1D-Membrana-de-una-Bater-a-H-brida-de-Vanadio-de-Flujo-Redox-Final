@@ -107,7 +107,9 @@ En la salida hacia el ánodo, se aplican condiciones diferentes según la especi
 
 * Protones ($H^+$): Se impone un flujo proporcional a la densidad de corriente aplicada ($j_{appl}$), asumiendo que son los principales portadores de carga.
   
-    $$-\vec{n} \cdot \vec{N}_{H^+} = \frac{j_{appl}}{F}$$
+  $$
+  -\vec{n} \cdot \vec{N}_{H^+} = \frac{j_{appl}}{F}
+  $$
 
 * Especies de Vanadio ($VO^{2+}, VO_{2}^{+}$): Se asume una condición de Flujo Nulo (Neumann), implicando que no hay *crossover* de vanadio hacia el ánodo en esta simplificación del modelo.
   
