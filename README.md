@@ -150,7 +150,6 @@ El código está escrito en **Python** y utiliza las siguientes librerías:
 2.  **Catalina A. Pino Muñoz**. "Mathematical Modelling of Vanadium-Based Redox Flow Batteries". PhD thesis, Imperial College London, September 2019. 
 3. **Chen et al.** "Progress in electrical energy storage system: A critical review". *Progress in Natural Science*, 19(3):291-312, 2009.
 4.  **Alotto et al.** "Redox flow batteries for the storage of renewable energy: A review". *Renewable and Sustainable Energy Reviews*, 29:325-335, 2014. 
-5. **Ministerio de Energía, Gobierno de Chile.** (2022). *Ley de Almacenamiento y Electromovilidad (Ley N° 21.505)*. Biblioteca del Congreso Nacional de Chile.
-6. **Coordinador Eléctrico Nacional.** (2024). *Estudio de Vertimiento de Energías Renovables en el Sistema Eléctrico Nacional*.
-
+5. *Ministerio de Energía, Gobierno de Chile.** (2022). *Ley de Almacenamiento y Electromovilidad (Ley N° 21.505)*. Biblioteca del Congreso Nacional de Chile. [Ver Ley en BCN](https://www.bcn.cl/leychile/navegar?idNorma=1184572)
+6.  **Coordinador Eléctrico Nacional.** (2024). *Reducciones de energía eólica y solar en el SEN (Vertimientos)*. Reportes de Operación Real. [Ver Reportes CEN](https://www.coordinador.cl/operacion/documentos/reducciones-de-generacion-renovable/2024-resumen-de-reduccion-de-energia-eolica-y-solar-durante-la-operacion-en-tiempo-real/)
 
