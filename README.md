@@ -91,19 +91,29 @@ El sistema resultante es un sistema de Ecuaciones Diferenciales Algebraicas (DAE
 
 ## Condiciones de Borde
 
-El dominio se define entre $x=0$ (interfaz Cátodo/Membrana) y $x=L$ (interfaz Membrana/Ánodo).
+El dominio computacional se define entre $x=0$ (interfaz Cátodo/Membrana) y $x=L$ (interfaz Membrana/Ánodo).
 
-**1. Transporte de Masa ($H^+$):**
-* En $x=0$ (Izquierda): Condición de Dirichlet basada en el equilibrio de Donnan con el tanque.
-    $$c_{H^{+}} = c_{H^{+}}^{T} \cdot \exp\left(\frac{-z F \Delta \phi_{Donnan}}{RT}\right)$$
-* En $x=L$ (Derecha): Condición de Neumann basada en la corriente aplicada (Ley de Faraday).
+### 1. Interfaz Izquierda ($x=0$)
+En la interfaz con el electrolito (tanque), las concentraciones en la superficie de la membrana no son iguales a las del tanque ($bulk$). [cite_start]Se calculan considerando el Salto de Potencial de Donnan ($\Delta \phi_D$), lo que genera una discontinuidad en la concentración [cite: 1296-1297, 1465-1467]:
+
+$$
+c_{i}(x=0) = c_{i}^{bulk} \cdot \exp\left(\frac{-z_i F \Delta \phi_{Donnan}}{RT}\right)
+$$
+
+Donde $i$ representa las especies $H^+$, $VO^{2+}$ y $VO_{2}^{+}$.
+
+### 2. Interfaz Derecha ($x=L$)
+En la salida hacia el ánodo, se aplican condiciones diferentes según la especie:
+
+* Protones ($H^+$): Se impone un flujo proporcional a la densidad de corriente aplicada ($j_{appl}$), asumiendo que son los principales portadores de carga.
     $$-\vec{n} \cdot \vec{N}_{H^+} = \frac{j_{appl}}{F}$$
 
-**2. Potencial Iónico ($\phi_e$):**
-* En $x=0$: Se fija un potencial de referencia (Dirichlet).
-    $$\phi_{e} = \phi_{ref}$$
-* En $x=L$: Se establece el flujo de corriente total (Neumann).
-    $$j_{total} = j_{appl}$$
+* Especies de Vanadio ($VO^{2+}, VO_{2}^{+}$): Se asume una condición de Flujo Nulo (Neumann), implicando que no hay *crossover* de vanadio hacia el ánodo en esta simplificación del modelo.
+    $$-\vec{n} \cdot \vec{N}_{V} = 0$$
+
+### 3. Potencial Iónico ($\phi_e$)
+* En $x=0$: Se fija un potencial de referencia (Dirichlet), $\phi_{e} = 0$.
+* [cite_start]En $x=L$: Se establece que la corriente iónica total debe igualar a la corriente aplicada (Neumann) [cite: 57-58].
 
 ---
 
