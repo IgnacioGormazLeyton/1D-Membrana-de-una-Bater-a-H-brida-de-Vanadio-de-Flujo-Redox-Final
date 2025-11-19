@@ -120,9 +120,6 @@ El código está escrito en **Python** y utiliza las siguientes librerías:
 1.  **K. W. Knehr et al.** "A transient vanadium flow battery model incorporating vanadium crossover and water transport through the membrane". *Journal of The Electrochemical Society*, 159(9):A1446-A1459, 2012. 
 2.  **Catalina A. Pino Muñoz**. "Mathematical Modelling of Vanadium-Based Redox Flow Batteries". PhD thesis, Imperial College London, September 2019. 
 
-### Ejecución
-Instalar dependencias:
-```bash
-pip install -r requirements.txt
+
 
 
